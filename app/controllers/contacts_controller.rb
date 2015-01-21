@@ -14,6 +14,11 @@ get '/contacts/new' do
   erb :'contacts/new'
 end
 
+get '/contacts/:id' do
+  @contact = Contact.find(params[:id])
+  erb :'contacts/show'
+end
+
 
 # POST ========================================================================
 
