@@ -19,6 +19,11 @@ get '/contacts/:id' do
   erb :'contacts/show'
 end
 
+get '/contacts/:id/edit' do
+  @contact = Contact.find(params[:id])
+  erb :'contacts/edit'
+end
+
 
 # POST ========================================================================
 
@@ -29,5 +34,17 @@ post '/contacts' do
   else
     response.status = 422
     erb :'contacts/new'
+  end
+end
+
+# PUT =========================================================================
+
+put '/contacts/:id' do
+  @contact = Contact.find(params[:id])
+  if @contact.update_attributes(params[:contact])
+    redirect '/contacts'
+  else
+    response.status = 422
+    erb 'contacts/edit'
   end
 end
