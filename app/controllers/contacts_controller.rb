@@ -48,3 +48,11 @@ put '/contacts/:id' do
     erb 'contacts/edit'
   end
 end
+
+# DELETE ======================================================================
+
+delete '/contacts/:id' do
+  @contact = Contact.find(params[:id])
+  @contact.destroy
+  redirect '/contacts'
+end
