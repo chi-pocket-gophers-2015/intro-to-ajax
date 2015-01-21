@@ -1,0 +1,28 @@
+main {
+  width: 960px;
+  margin: auto;
+}
+
+table {
+  width: 100%;
+}
+
+th, td {
+  text-align: left;
+}
+
+td form {
+  display: inline;
+}
+
+.btn {
+  text-align: center;
+  background-color: green;
+  border-radius: 5px;
+  color: white;
+  display: block;
+  margin-top: 10px;
+  padding: 5px;
+  text-decoration: none;
+  width: 100px;
+}

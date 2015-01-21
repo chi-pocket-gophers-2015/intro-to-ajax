@@ -1,0 +1,25 @@
+<h1>Create New Contact</h1>
+
+<form method="POST" action="/contacts">
+  <div>
+    <label for="first_name">First Name: </label>
+    <input id="first_name" type="text" name="contact[first_name]">
+  </div>
+    <div>
+    <label for="last_name">Last Name: </label>
+    <input id="last_name" type="text" name="contact[last_name]">
+  </div>
+    <div>
+    <label for="phone">Phone: </label>
+    <input id="phone" type="text" name="contact[phone]">
+  </div>
+    <div>
+    <label for="email">Email: </label>
+    <input id="email" type="text" name="contact[email]">
+  </div>
+  <div>
+    <input type="submit" value="Create">
+  </div>
+</form>
+
+<a href="<%= back %>">Back to Contacts</a>
