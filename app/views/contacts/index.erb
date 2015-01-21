@@ -12,48 +12,22 @@
       </tr>
     </thead>
     <tbody>
-      <tr>
-        <td>Kevin</td>
-        <td>Solorio</td>
-        <td>312.555.1212</td>
-        <td>kevin@example.com</td>
-        <td>
-          <a href="/contacts/1" title="Kevin Solorio">Details</a> |
-          <a href="/contacts/1/edit" title="edit">Edit</a> |
-          <form method="POST" action="/contacts/1">
-            <input type="hidden" name="_method" value="DELETE">
-            <input type="submit" value="Delete">
-          </form>
-        </td>
-      </tr>
-      <tr>
-        <td>Kevin</td>
-        <td>Solorio</td>
-        <td>312.555.1212</td>
-        <td>kevin@example.com</td>
-        <td>
-          <a href="/contacts/1" title="Kevin Solorio">Details</a> |
-          <a href="/contacts/1/edit" title="edit">Edit</a> |
-          <form method="POST" action="/contacts/1">
-            <input type="hidden" name="_method" value="DELETE">
-            <input type="submit" value="Delete">
-          </form>
-        </td>
-      </tr>
-      <tr>
-        <td>Kevin</td>
-        <td>Solorio</td>
-        <td>312.555.1212</td>
-        <td>kevin@example.com</td>
-        <td>
-          <a href="/contacts/1" title="Kevin Solorio">Details</a> |
-          <a href="/contacts/1/edit" title="edit">Edit</a> |
-          <form method="POST" action="/contacts/1">
-            <input type="hidden" name="_method" value="DELETE">
-            <input type="submit" value="Delete">
-          </form>
-        </td>
-      </tr>
+      <% @contacts.each do |contact| %>
+        <tr>
+          <td><%= contact.first_name %></td>
+          <td><%= contact.last_name %></td>
+          <td><%= contact.phone %></td>
+          <td><%= contact.email %></td>
+          <td>
+            <a href="/contacts/<%= contact.id%>" title="<%= contact.full_name %>">Details</a> |
+            <a href="/contacts/<%= contact.id%>/edit" title="edit">Edit</a> |
+            <form method="POST" action="/contacts/<%= contact.id %>">
+              <input type="hidden" name="_method" value="DELETE">
+              <input type="submit" value="Delete">
+            </form>
+          </td>
+        </tr>
+      <% end %>
     </tbody>
   </table>
 </section>
