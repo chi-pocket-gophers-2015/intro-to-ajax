@@ -1,0 +1,14 @@
+<tr>
+  <td><%= contact.first_name %></td>
+  <td><%= contact.last_name %></td>
+  <td><%= contact.phone %></td>
+  <td><%= contact.email %></td>
+  <td>
+    <a href="/contacts/<%= contact.id%>" title="<%= contact.full_name %>">Details</a> |
+    <a href="/contacts/<%= contact.id%>/edit" title="edit">Edit</a> |
+    <form method="POST" action="/contacts/<%= contact.id %>">
+      <input type="hidden" name="_method" value="DELETE">
+      <input type="submit" value="Delete">
+    </form>
+  </td>
+</tr>
